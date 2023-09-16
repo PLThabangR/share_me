@@ -1,11 +1,20 @@
 import React from 'react'
-import { GoogleOAuthProvider } from '@react-oauth/google'; 
+import { GoogleLogin } from '@react-oauth/google'; 
 import {FcGoogle} from 'react-icons/fc';
 import shareVideo from '../assets/share.mp4'
 import logo from '../assets/logowhite.png'
 const Login = () => {
-  return (
+ //cliendId//113733482410-i5ttkpc7vlotth3j898gcvmnfb6vno3a.apps.googleusercontent.com
+ //ClientSecret//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
 
+ const responseGoogle =(response)=>{
+
+ }
+
+    return (
+
+        <>
+       
     <div className="flex justify-start items-center flex-col h-screen">
     <div className='relative w-full h-full'>
 
@@ -23,13 +32,22 @@ const Login = () => {
     <img src={logo} width="130px" alt="logo"/>
     </div>
     <div className='shadow-2xl'>
-    
+        <GoogleLogin
+      
+        onSuccess={responseGoogle}
+        onFailure={responseGoogle}
+        cookiePolicy="sinle_host_origin"
+
+        />
     </div>
     </div>
     </div>
   
     
     </div>
+  
+
+    </>
   )
 }
 
